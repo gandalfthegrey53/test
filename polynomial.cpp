@@ -3,7 +3,11 @@
 
 std::ostream& operator<<(std::ostream& os, Term& t)
 {
-	os << t.coef << "x^" << t.exp;
+	if (t.exp == 0) {
+		os << t.coef;
+	} else {
+		os << t.coef << "x^" << t.exp;
+	}
 	return os;
 }
 

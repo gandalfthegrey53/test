@@ -90,7 +90,6 @@ void Chain<T>::InsertBack(const T& dt)
 {
 	ChainNode<T> *node = new ChainNode<T>(dt);
 	if (IsEmpty()) {
-		node->link = last;
 		first = node;
 		last = node;
 		return;
