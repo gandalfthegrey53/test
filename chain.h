@@ -27,6 +27,8 @@ class Chain {
 	void Reverse();
 	void Show() const;
 	class ChainIterator;
+	ChainIterator begin() {return ChainIterator(first);}
+	ChainIterator end() {return ChainIterator(NULL);}
 	private:
 		ChainNode<T>* first;
 		ChainNode<T>* last;
