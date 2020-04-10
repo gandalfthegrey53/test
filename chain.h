@@ -27,8 +27,8 @@ class Chain {
 	void Reverse();
 	void Show() const;
 	class ChainIterator;
-	ChainIterator begin() {return ChainIterator(first);}
-	ChainIterator end() {return ChainIterator(NULL);}
+	ChainIterator begin() const {return ChainIterator(first);}
+	ChainIterator end() const {return ChainIterator(NULL);}
 	private:
 		ChainNode<T>* first;
 		ChainNode<T>* last;
@@ -90,7 +90,10 @@ void Chain<T>::InsertBack(const T& dt)
 {
 	ChainNode<T> *node = new ChainNode<T>(dt);
 	if (IsEmpty()) {
+		node->link = last;
 		first = node;
+		last = node;
+		return;
 	}
 	last->link = node;
 	last = node;

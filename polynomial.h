@@ -15,6 +15,7 @@ struct Term {
 class Polynomial {
 	public:
 		Polynomial operator+(const Polynomial& b) const;
+		void Input(int c, int e);
 		void Show();
 	private:
 		Chain<Term> poly;
