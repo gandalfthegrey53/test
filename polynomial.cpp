@@ -18,7 +18,7 @@ Polynomial Polynomial::operator+(const Polynomial& b) const
 	Chain<Term>::ChainIterator bi = b.poly.begin();
 	Chain<Term>::ChainIterator end = poly.end();
 	Term temp;
-	while (ai != end && bi != end) {
+	while (ai && bi) {
 		if(ai->exp == bi->exp) {
 			int sum = ai->coef + bi->coef;
 			temp.Set(sum, ai->exp);
