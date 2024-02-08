@@ -1,5 +1,6 @@
 #ifndef CIRCULARLIST_H
 #define CIRCULARLIST_H
+#include <iostream>
 
 template <class T>
 class Circularlist;
@@ -8,7 +9,7 @@ template <class T>
 class ChainNode {
 	friend Circularlist<T>;
 	public:
-		ChainNode(T dt, ChainNode<T>* lk = NULL):link(lk) {
+		ChainNode(T dt, ChainNode<T>* lk = nullptr):link(lk) {
 			data = dt;
 		}
 	private:
@@ -36,14 +37,14 @@ class Circularlist {
 template <class T>
 Circularlist<T>::Circularlist()
 {
-	first = NULL;
-	last = NULL;
+	first = nullptr;
+	last = nullptr;
 }
 
 template <class T>
 bool Circularlist<T>::IsEmpty() const
 {
-	return first == NULL;
+	return first == nullptr;
 }
 
 template <class T>
@@ -84,7 +85,7 @@ void Circularlist<T>::Delete(const T& dt)
 	} else if (first->link == first) {
 		if (dt == first->data) {
 			delete first;
-			first = last = NULL;
+			first = last = nullptr;
 		}
 		return;
 	}

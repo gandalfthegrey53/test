@@ -1,5 +1,2 @@
 *.o
-*.exe
-test.cpp
-new.cpp
 *.txt

@@ -1,6 +1,12 @@
+all: a
+	a.out
 a: test.o
-	g++ test.o
-test.o: test.cpp chain.h circularlist.h
+	g++ test.o polynomial.o
+test.o: test.cpp polynomial.o
 	g++ -c test.cpp
+polynomial.o: polynomial.h polynomial.cpp chain.h
+	g++ -c polynomial.cpp 
+gen_tags:
+	ctags --languages=c++ -R *
 clean:
-	del *.o *.exe
+	rm *.o *.out tags

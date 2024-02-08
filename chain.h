@@ -8,7 +8,7 @@ template <class T>
 class ChainNode {
 	friend Chain<T>;
 	public:
-		ChainNode(T dt, ChainNode<T>* lk = NULL):link(lk) {
+		ChainNode(T dt, ChainNode<T>* lk = nullptr):link(lk) {
 			data = dt;
 		}
 	private:
@@ -28,7 +28,7 @@ class Chain {
 	void Show() const;
 	class ChainIterator;
 	ChainIterator begin() const {return ChainIterator(first);}
-	ChainIterator end() const {return ChainIterator(NULL);}
+	ChainIterator end() const {return ChainIterator(nullptr);}
 	private:
 		ChainNode<T>* first;
 		ChainNode<T>* last;
@@ -37,7 +37,7 @@ class Chain {
 template <class T>
 class Chain<T>::ChainIterator {
 	public:
-		ChainIterator(ChainNode<T>* startNode = NULL) {
+		ChainIterator(ChainNode<T>* startNode = nullptr) {
 			current = startNode;
 		}
 		T& operator*() const {return current->data;}
@@ -67,14 +67,14 @@ class Chain<T>::ChainIterator {
 template <class T>
 Chain<T>::Chain()
 {
-	first = NULL;
-	last = NULL;
+	first = nullptr;
+	last = nullptr;
 }
 
 template <class T>
 bool Chain<T>::IsEmpty() const
 {
-	return first == NULL;
+	return first == nullptr;
 }
 
 template <class T>
@@ -130,10 +130,10 @@ void Chain<T>::Reverse()
 	if (IsEmpty() || first == last) {
 		return;
 	}
-	ChainNode<T> *front, *middle, *rear = NULL;
+	ChainNode<T> *front, *middle, *rear = nullptr;
 	front = first->link;
 	middle = first;
-	while (front != NULL) {
+	while (front != nullptr) {
 		middle->link = rear;
 		rear = middle;
 		middle = front;
